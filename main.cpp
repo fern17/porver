@@ -11,6 +11,7 @@
 #include "Game.hpp"
 #include "Player.hpp"
 #include "Game.hpp"
+#include "Bubble.hpp"
 
 
 bool GameOn(sf::RenderWindow &screen, unsigned int level){
@@ -20,6 +21,11 @@ bool GameOn(sf::RenderWindow &screen, unsigned int level){
     Player * player = dynamic_cast<Player*>(gameManager.AddObject(new Player(in)));
 
     sf::Event event;
+
+    for (int i = 0 ; i < level ; i ++)
+    {
+	    gameManager.AddObject(new Bubble(i*200, 128, 5-level, level%3, level%3));
+    }
 
     while(true){
 
