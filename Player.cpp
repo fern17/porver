@@ -1,7 +1,8 @@
 #include "Player.hpp"
 
-Player::Player()
+Player::Player(const sf::Input& in) : _input(in)
 {
+
 }
 
 void Player::Step()
