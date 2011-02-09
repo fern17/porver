@@ -3,7 +3,7 @@
 unsigned int posx = 200;
 unsigned int posy = 700;
 
-Player::Player(const sf::Input& in) : _input(in)
+Player::Player(const sf::Input& in, Game& gm) : _input(in), _gameManager(gm)
 {
 	_x = posx;
 	_y = posy;
@@ -24,7 +24,12 @@ void Player::Step()
 		_x -= _speedx;
 	if(_input.IsKeyDown(sf::Key::D))
 		_x += _speedx;
+	if(_input.IsKeyDown(sf::Key::Space)){
+		_gameManager.AddObject(new Bullet(_x,_y));
+	}
 
+
+	_spr.SetX(_x);
 }
 
 int Player::GetLifes()
