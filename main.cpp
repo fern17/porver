@@ -44,7 +44,7 @@ bool GameOn(sf::RenderWindow &screen, unsigned int level){
 
 
 int main(){
-    sf::RenderWindow screen(sf::VideoMode(640, 480, 32),"porver");
+    sf::RenderWindow screen(sf::VideoMode(1024, 768, 32),"porver");
 
     //
     unsigned int level = 0;
