@@ -1,10 +1,17 @@
 #include "Bubble.hpp"
 
-Bubble::Bubble(int x, int y, int size, float speed_x, float speed_y)
-: _size(size), _speed_x(speed_x), _speed_y(speed_x)
+Bubble::Bubble(double x, double y, int size, float speed_x, float speed_y)
+: _size(size), _speed_x(speed_x), _speed_y(speed_y)
 {
+	_x = x;
+	_y = y;
+
     _type = Game::NUM_BUBBLE;
-	_spr.SetPosition(x, y);
+
+    _img = new sf::Image();
+	_img->LoadFromFile("sprites/bubble.png");
+	_spr.SetImage(*_img);
+	_spr.SetPosition(_x,_y);
 
 	CenterSprite();
 }
@@ -25,5 +32,9 @@ void Bubble::Step()
 int Bubble::GetSize()
 {
 	return _size;
+}
+
+Bubble::~Bubble(){
+	delete _img;
 }
 

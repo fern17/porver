@@ -11,8 +11,11 @@ class Player : public Object
 protected:
 	int _lifes;
 	const sf::Input & _input;
+	double _speedx;
+
 public:
 	Player(const sf::Input& in);
+	~Player();
 	virtual void Step();
 
 

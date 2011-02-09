@@ -8,6 +8,7 @@ class Object
 {
 protected:
 	sf::Sprite _spr;
+	sf::Image * _img;
 	double _x, _y;
 	unsigned int _type;
 public:

@@ -10,7 +10,8 @@ protected:
 	float _speed_x, _speed_y;
 
 public:
-	Bubble(int x, int y, int size, float speed_x, float speed_y);
+	Bubble(double x,double y, int size, float speed_x, float speed_y);
+	~Bubble();
 	virtual void Step();
 
 	int GetSize();
