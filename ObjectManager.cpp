@@ -14,8 +14,9 @@ void ObjectManager::Iterate(){
     }
 }
 
-void ObjectManager::AddObject(Object *obj){
+Object * ObjectManager::AddObject(Object *obj){
     _objList.push_back(obj);
+    return obj;
 }
 
 void ObjectManager::RemoveObject(Object *obj){

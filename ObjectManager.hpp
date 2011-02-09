@@ -15,7 +15,7 @@ private:
 public:
     ObjectManager(sf::RenderWindow &scr);
     void Iterate();
-    void AddObject(Object *obj);
+    Object * AddObject(Object *obj);
     void RemoveObject(Object *obj);
 
 };
