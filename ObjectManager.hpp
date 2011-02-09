@@ -1,10 +1,11 @@
 #ifndef OBJECTMANAGER_HPP
 #define OBJECTMANAGER_HPP
 
-#include <SFML/Window.hpp>
-#include "Object.hpp"
+#include <SFML/Graphics.hpp>
 #include <list>
 #include <queue>
+
+class Object;
 
 class ObjectManager{
 protected:

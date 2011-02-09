@@ -2,7 +2,7 @@
 
 Player::Player(const sf::Input& in) : _input(in)
 {
-
+    _type = Game::NUM_PLAYER;
 }
 
 void Player::Step()

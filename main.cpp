@@ -8,7 +8,7 @@
 
 //classes
 #include "Object.hpp"
-#include "ObjectManager.hpp"
+#include "Game.hpp"
 #include "Player.hpp"
 
 
@@ -34,6 +34,7 @@ bool GameOn(sf::RenderWindow &screen, unsigned int level){
 
         if(cantBurbujas == 0) //termina el nivel
             return true;
+
         if(player->GetLifes() == 0) //perdiste
             return false;
 

@@ -3,6 +3,8 @@
 
 #include <SFML/Window.hpp>
 #include "Object.hpp"
+#include "Game.hpp"
+
 
 class Player : public Object
 {
