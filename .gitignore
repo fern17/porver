@@ -2,3 +2,5 @@
 *.dll
 *.cbp
 *.depend
+bin/*
+obj/*

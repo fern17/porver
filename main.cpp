@@ -29,8 +29,10 @@ int main(){
         while(GameOn(screen,level)){
             level++;
         }
-        screen.Close();
+        //mensaje de you lost
+
     }
+    screen.Close();
     return EXIT_SUCCESS;
 
 }
