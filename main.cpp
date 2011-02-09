@@ -3,12 +3,13 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include "Object.hpp"
+
 #include <list>
 bool GameOn(sf::RenderWindow &screen, unsigned int level){
     while(true){
         screen.Clear();
         sf::Event event;
-        std::list<Object *> objList;
+
         while(screen.GetEvent(event)){
             //if((event.EventType == sf::Event::Closed) or (event.Key.Code == sf::Key::Escape))
                 return false;
