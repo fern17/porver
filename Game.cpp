@@ -1,6 +1,9 @@
 #include "Game.hpp"
 #include "Object.hpp"
 
+const unsigned int Game::NUM_PLAYER = 0;
+const unsigned int Game::NUM_BUBBLE = 1;
+
 Game::Game(sf::RenderWindow &scr) : ObjectManager(scr){}
 
 unsigned int Game::BubbleCount(){

@@ -10,8 +10,6 @@ public:
     unsigned int BubbleCount();
     Game(sf::RenderWindow &scr);
 };
-const unsigned int Game::NUM_PLAYER = 0;
-const unsigned int Game::NUM_BUBBLE = 1;
 
 
 
