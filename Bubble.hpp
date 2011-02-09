@@ -7,10 +7,10 @@ class Bubble : public Object
 {
 protected:
 	int _size;
-	float _speed;
+	float _speed_x, _speed_y;
 
 public:
-	Bubble(int x, int y, int size, float speed);
+	Bubble(int x, int y, int size, float speed_x, float speed_y);
 	virtual void Step();
 
 	int GetSize();
