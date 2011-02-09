@@ -22,18 +22,21 @@ bool GameOn(sf::RenderWindow &screen, unsigned int level){
     sf::Event event;
 
     while(true){
+
         screen.Clear(sf::Color::Black);
 
         while(screen.GetEvent(event)){
-            if((event.Type == sf::Event::Closed) or (event.Key.Code == sf::Key::Escape))
+            if((event.Type == sf::Event::Closed) or (event.Key.Code == sf::Key::Escape)){
                 screen.Close();
+                return EXIT_SUCCESS;
+			}
         }
 
         gameManager.Iterate();
 
         unsigned int cantBurbujas = gameManager.BubbleCount();
 
-        if(cantBurbujas == 0) //termina el nivel
+        if(cantBurbujas == 1) //termina el nivel CAMBIAR ESTOOOOOOOOOOOOOOOOOOOOOOOOOOOO A 0
             return true;
 
         if(player->GetLifes() == 0) //perdiste
@@ -47,11 +50,13 @@ bool GameOn(sf::RenderWindow &screen, unsigned int level){
 
 int main(){
     sf::RenderWindow screen(sf::VideoMode(1024, 768, 32),"porver");
-
+	screen.SetFramerateLimit(30);
     //
     unsigned int level = 0;
     while (screen.IsOpened()){
+
         while(GameOn(screen,level)){
+
             level++;
         }
         //mensaje de you lost
