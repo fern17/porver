@@ -10,6 +10,7 @@
 #include "Object.hpp"
 #include "ObjectManager.hpp"
 #include "Player.hpp"
+#include "Game.hpp"
 
 
 bool GameOn(sf::RenderWindow &screen, unsigned int level){
