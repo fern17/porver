@@ -33,7 +33,7 @@ bool GameOn(sf::RenderWindow &screen, unsigned int level){
 
         unsigned int cantBurbujas = gameManager.BubbleCount();
 
-        if(cantBurbujas == 0) //termina el nivel
+        if(cantBurbujas == 1) //termina el nivel
             return true;
 
         if(player->GetLifes() == 0) //perdiste
