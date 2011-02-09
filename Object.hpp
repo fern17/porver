@@ -20,5 +20,10 @@ public:
 	{
 		return _spr;
 	}
+
+	void CenterSprite()
+	{
+		_spr.SetCenter(_spr.GetImage()->GetWidth()/2, _spr.GetImage()->GetHeight()/2);
+	}
 };
 #endif
