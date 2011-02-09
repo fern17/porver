@@ -11,6 +11,8 @@ protected:
 	const sf::Input & _input;
 public:
 	Player(const sf::Input& in);
+	virtual void Step();
+
 
 	int GetLifes();
 };
