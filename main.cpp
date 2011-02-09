@@ -15,8 +15,8 @@
 bool GameOn(sf::RenderWindow &screen, unsigned int level){
     const sf::Input& in = screen.GetInput();
 
-    ObjectManager objManager(screen);
-    Player * player = dynamic_cast<Player*>(objManager.AddObject(new Player(in)));
+    Game gameManager(screen);
+    Player * player = dynamic_cast<Player*>(gameManager.AddObject(new Player(in)));
 
     sf::Event event;
 
@@ -27,13 +27,19 @@ bool GameOn(sf::RenderWindow &screen, unsigned int level){
             if((event.Type == sf::Event::Closed) or (event.Key.Code == sf::Key::Escape))
                 screen.Close();
         }
-        objManager.Iterate();
 
-        if(player->GetLifes() == 0) return false;
+        gameManager.Iterate();
+
+        unsigned int cantBurbujas = gameManager.BubbleCount();
+
+        if(cantBurbujas == 0) //termina el nivel
+            return true;
+        if(player->GetLifes() == 0) //perdiste
+            return false;
 
         screen.Display();
     }
-    //return true;
+
 }
 
 
