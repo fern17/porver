@@ -7,7 +7,6 @@ class Object
 {
 protected:
 	sf::Sprite _spr;
-	sf::RenderWindow *_rend;
 	double _x, _y;
 public:
 	virtual void Step();
