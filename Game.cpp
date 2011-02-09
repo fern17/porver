@@ -1,4 +1,8 @@
 #include "Game.hpp"
+#include "Object.hpp"
+
+Game::Game(sf::RenderWindow &scr) : ObjectManager(scr){}
+
 unsigned int Game::BubbleCount(){
     unsigned int count = 0;
     _listIterator = _objList.begin();

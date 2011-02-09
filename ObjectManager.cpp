@@ -1,5 +1,5 @@
 #include "ObjectManager.hpp"
-
+#include "Object.hpp"
 
 ObjectManager::ObjectManager(sf::RenderWindow &scr) : _screen(scr){
     _listIterator = _objList.begin(); //que es end

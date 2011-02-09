@@ -3,6 +3,7 @@
 Bubble::Bubble(int x, int y, int size, float speed_x, float speed_y)
 : _size(size), _speed_x(speed_x), _speed_y(speed_x)
 {
+    _type = Game::NUM_BUBBLE;
 	_spr.SetPosition(x, y);
 
 	CenterSprite();
