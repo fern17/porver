@@ -58,7 +58,7 @@ int main(){
     sf::RenderWindow screen(sf::VideoMode(1024, 768, 32),"porver");
 	screen.SetFramerateLimit(30);
     //
-    unsigned int level = 0;
+    unsigned int level = 1;
     while (screen.IsOpened()){
 
         while(GameOn(screen,level)){
