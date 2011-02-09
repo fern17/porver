@@ -9,7 +9,7 @@ protected:
 	sf::Sprite _spr;
 	double _x, _y;
 public:
-	virtual void Step();
+	virtual void Step() {};
 
 	sf::Sprite & GetSprite()
 	{

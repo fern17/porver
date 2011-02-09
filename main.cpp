@@ -7,18 +7,12 @@
 #include <list>
 bool GameOn(sf::RenderWindow &screen, unsigned int level){
     while(true){
-        screen.Clear();
+        screen.Clear(sf::Color::Black);
         sf::Event event;
 
         while(screen.GetEvent(event)){
             //if((event.EventType == sf::Event::Closed) or (event.Key.Code == sf::Key::Escape))
                 return false;
-        }
-        std::list<Object *>::iterator p = objList.begin();
-        while(p != objList.end()){
-            (*p)->Step();
-            p++;
-            screen.Draw((*p)->GetSprite());
         }
 
         screen.Display();

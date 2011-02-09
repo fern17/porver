@@ -2,7 +2,7 @@
 #define OBJECTMANAGER_HPP
 
 #include <SFML/Window.hpp>
-
+#include "Object.hpp"
 #include <list>
 #include <queue>
 
@@ -11,7 +11,7 @@ private:
     std::list<Object *> _objList;
     std::list<Object *>::iterator _listIterator;
     std::queue<Object *> _toRemove;
-    sf::RenderWindow screen;
+    sf::RenderWindow & _screen;
 public:
     ObjectManager(sf::RenderWindow &scr);
     void Iterate();
