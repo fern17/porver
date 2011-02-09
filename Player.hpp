@@ -9,6 +9,7 @@ protected:
 	int _lifes;
 public:
 	Player();
+	virtual void Step();
 
 	int GetLifes();
 };
