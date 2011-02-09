@@ -18,8 +18,8 @@ bool GameOn(sf::RenderWindow &screen, unsigned int level){
     ObjectManager objManager(screen);
     Player * player = dynamic_cast<Player*>(objManager.AddObject(new Player(in)));
 
-
     sf::Event event;
+
     while(true){
         screen.Clear(sf::Color::Black);
 

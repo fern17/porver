@@ -7,7 +7,7 @@
 #include <queue>
 
 class ObjectManager{
-private:
+protected:
     std::list<Object *> _objList;
     std::list<Object *>::iterator _listIterator;
     std::queue<Object *> _toRemove;
