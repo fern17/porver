@@ -1,5 +1,6 @@
 #include "Bubble.hpp"
 
+const int Bubble::_sizes[] = {16, 32, 64, 128};
 
 Bubble::Bubble(double x, double y, int size, float speed_x, float speed_y, Game &gm)
 :  _speed_x(speed_x), _speed_y(speed_y), _gameManager(gm)
@@ -15,25 +16,19 @@ Bubble::Bubble(double x, double y, int size, float speed_x, float speed_y, Game 
 
 	_spr.SetPosition(_x,_y);
 
-	_size = 128;
-	for (int i = 1 ; i < (5-size) ; i ++)
-	{
-		_size /= 2;
-	}
-	_spr.SetScale((float)_size/128.f, (float)_size/128.f);
+	_size = size;
+	_spr.SetScale(float(_sizes[_size])/128.f, float(_sizes[_size])/128.f);
 }
 
 void Bubble::Step()
 {
-	_spr.Move(_speed_x, _speed_y);
-
-	int x = _spr.GetPosition().x;
-	int y = _spr.GetPosition().y;
-
-	if (x+_size >= 1024 || x-_size <= 0)
+	if (_x+_sizes[_size] >= 1024 || _x-_sizes[_size] <= 0)
 		_speed_x *= -1;
-	if (y+_size >= 768 || y-_size <= 0)
+	if (_y+_sizes[_size] >= 768 || _y-_sizes[_size] <= 0)
 		_speed_y *= -1;
+
+	_x += _speed_x;
+	_y += _speed_y;
 
 	static int asd = 0;
 	asd ++;
@@ -42,6 +37,8 @@ void Bubble::Step()
 		Destroy();
 		asd = 0;
 	}
+
+	_spr.SetPosition(_x, _y);
 }
 
 void Bubble::Destroy()
