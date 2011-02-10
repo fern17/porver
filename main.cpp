@@ -24,7 +24,7 @@ bool GameOn(sf::RenderWindow &screen, unsigned int level){
 
     for (unsigned int i = 0 ; i < level ; i ++)
     {
-	    gameManager.AddObject(new Bubble(i*400, 500, 5-level, level%3, level%3,gameManager));
+		gameManager.AddObject(new Bubble(i*160+160, 160, 5-level, (level%4) + 3, (level%5) + 2,gameManager));
     }
 
     while(true){
