@@ -20,5 +20,14 @@ Object * ObjectManager::AddObject(Object *obj){
 }
 
 void ObjectManager::RemoveObject(Object *obj){
-    _objList.remove(obj);
+	_toRemove.push(obj);
+}
+
+void ObjectManager::RemoveAtQueue(){
+	while(_toRemove.size() != 0){
+		Object * toErase = _toRemove.front();
+		_objList.remove(toErase);
+		delete toErase;
+		_toRemove.pop();
+	}
 }

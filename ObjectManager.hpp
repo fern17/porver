@@ -18,6 +18,7 @@ public:
     void Iterate();
     Object * AddObject(Object *obj);
     void RemoveObject(Object *obj);
+    void RemoveAtQueue();
 
 };
 #endif
