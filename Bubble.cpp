@@ -1,18 +1,26 @@
 #include "Bubble.hpp"
 
+
 Bubble::Bubble(double x, double y, int size, float speed_x, float speed_y, Game &gm)
-: _size(size), _speed_x(speed_x), _speed_y(speed_y), _gameManager(gm)
+:  _speed_x(speed_x), _speed_y(speed_y), _gameManager(gm)
 {
 	_x = x;
 	_y = y;
 	_size = 300;
     _type = Game::NUM_BUBBLE;
 
-
 	_spr.SetImage(*_gameManager["bubble"]);
-	_spr.SetPosition(_x,_y);
 
 	CenterSprite();
+
+	_spr.SetPosition(_x,_y);
+
+	_size = 128;
+	for (int i = 1 ; i < (5-size) ; i ++)
+	{
+		_size /= 2;
+	}
+	_spr.SetScale((float)_size/128.f, (float)_size/128.f);
 }
 
 void Bubble::Step()

@@ -15,6 +15,7 @@ public:
 	~Bubble();
 	virtual void Step();
 
+	void Destroy();
 	int GetSize();
 };
 

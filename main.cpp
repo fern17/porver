@@ -35,14 +35,14 @@ bool GameOn(sf::RenderWindow &screen, unsigned int level){
             if((event.Type == sf::Event::Closed) or (event.Key.Code == sf::Key::Escape)){
                 screen.Close();
                 return EXIT_SUCCESS;
-			}
+		}
         }
 
         gameManager.Iterate();
 
         unsigned int cantBurbujas = gameManager.BubbleCount();
 
-        if(cantBurbujas == 1) //termina el nivel CAMBIAR ESTOOOOOOOOOOOOOOOOOOOOOOOOOOOO A 0
+        if(cantBurbujas == 0) //termina el nivel CAMBIAR ESTOOOOOOOOOOOOOOOOOOOOOOOOOOOO A 0
             return true;
 
         if(player->GetLifes() == 0) //perdiste
