@@ -3,6 +3,7 @@
 
 const unsigned int Game::NUM_PLAYER = 0;
 const unsigned int Game::NUM_BUBBLE = 1;
+const unsigned int Game::NUM_BULLET = 2;
 
 Game::Game(sf::RenderWindow &scr) : ObjectManager(scr){}
 

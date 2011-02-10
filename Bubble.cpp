@@ -5,7 +5,7 @@ Bubble::Bubble(double x, double y, int size, float speed_x, float speed_y)
 {
 	_x = x;
 	_y = y;
-
+	_size = 300;
     _type = Game::NUM_BUBBLE;
 
     _img = new sf::Image();

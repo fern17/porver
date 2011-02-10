@@ -18,13 +18,13 @@ bool GameOn(sf::RenderWindow &screen, unsigned int level){
     const sf::Input& in = screen.GetInput();
 
     Game gameManager(screen);
-    Player * player = dynamic_cast<Player*>(gameManager.AddObject(new Player(in)));
+    Player * player = dynamic_cast<Player*>(gameManager.AddObject(new Player(in,gameManager)));
 
     sf::Event event;
 
     for (int i = 0 ; i < level ; i ++)
     {
-	    gameManager.AddObject(new Bubble(i*160+160, 160, 5-level, (level%4) + 3, (level%5) + 2));
+	    gameManager.AddObject(new Bubble(i*400, 500, 5-level, level%3, level%3));
     }
 
     while(true){
