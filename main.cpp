@@ -39,6 +39,7 @@ bool GameOn(sf::RenderWindow &screen, unsigned int level){
         }
 
         gameManager.Iterate();
+		gameManager.RemoveAtQueue();
 
         unsigned int cantBurbujas = gameManager.BubbleCount();
 

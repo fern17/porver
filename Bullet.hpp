@@ -8,7 +8,7 @@ class Bullet : public Object{
 	Game & _gameManager;
 public:
 	Bullet(double x, double y, Game &gm);
-
+	virtual void Step();
 
 };
 

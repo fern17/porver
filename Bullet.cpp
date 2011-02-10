@@ -11,5 +11,12 @@ Bullet::Bullet(double x, double y, Game &gm) : _gameManager(gm)
 	_spr.SetImage(*_gameManager["bullet"]);
 	_spr.SetPosition(_x,_y);
 	CenterSprite();
+}
 
+
+void Bullet::Step(){
+	_y += _speedy;
+	_spr.SetY(_y);
+	if(_y < 0)
+		_gameManager.RemoveObject(this);
 }
