@@ -9,6 +9,7 @@ class Bullet : public Object{
 public:
 	Bullet(double x, double y, Game &gm);
 
+	virtual void Step();
 
 };
 

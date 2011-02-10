@@ -13,3 +13,8 @@ Bullet::Bullet(double x, double y, Game &gm) : _gameManager(gm)
 	CenterSprite();
 
 }
+
+void Bullet::Step()
+{
+	
+}

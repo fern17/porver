@@ -34,6 +34,21 @@ void Bubble::Step()
 		_speed_x *= -1;
 	if (y+_size >= 768 || y-_size <= 0)
 		_speed_y *= -1;
+
+	static int asd = 0;
+	asd ++;
+	if (asd >= 150)
+	{
+		Destroy();
+		asd = 0;
+	}
+}
+
+void Bubble::Destroy()
+{
+	_gameManager.RemoveObject(this);
+	_gameManager.AddObject(new Bubble(_x, _y, _size-1, _speed_x, _speed_y, _gameManager));
+	_gameManager.AddObject(new Bubble(_x, _y, _size-1, -_speed_x, _speed_y, _gameManager));
 }
 
 int Bubble::GetSize()
