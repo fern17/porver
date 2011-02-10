@@ -15,6 +15,9 @@ protected:
 	double _speedx;
 	Game & _gameManager;
 
+	// Timers
+	sf::Clock _timer_shoot_delay;
+
 public:
 	Player(const sf::Input& in, Game &gm);
 	~Player();
