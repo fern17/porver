@@ -5,8 +5,9 @@
 
 class Bullet : public Object{
 	double _speedy;
+	Game & _gameManager;
 public:
-	Bullet(double x, double y);
+	Bullet(double x, double y, Game &gm);
 
 
 };

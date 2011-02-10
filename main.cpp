@@ -22,9 +22,9 @@ bool GameOn(sf::RenderWindow &screen, unsigned int level){
 
     sf::Event event;
 
-    for (int i = 0 ; i < level ; i ++)
+    for (unsigned int i = 0 ; i < level ; i ++)
     {
-	    gameManager.AddObject(new Bubble(i*400, 500, 5-level, level%3, level%3));
+	    gameManager.AddObject(new Bubble(i*400, 500, 5-level, level%3, level%3,gameManager));
     }
 
     while(true){

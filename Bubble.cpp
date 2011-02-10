@@ -1,16 +1,15 @@
 #include "Bubble.hpp"
 
-Bubble::Bubble(double x, double y, int size, float speed_x, float speed_y)
-: _size(size), _speed_x(speed_x), _speed_y(speed_y)
+Bubble::Bubble(double x, double y, int size, float speed_x, float speed_y, Game &gm)
+: _size(size), _speed_x(speed_x), _speed_y(speed_y), _gameManager(gm)
 {
 	_x = x;
 	_y = y;
 	_size = 300;
     _type = Game::NUM_BUBBLE;
 
-    _img = new sf::Image();
-	_img->LoadFromFile("sprites/bubble.png");
-	_spr.SetImage(*_img);
+
+	_spr.SetImage(*_gameManager["bubble"]);
 	_spr.SetPosition(_x,_y);
 
 	CenterSprite();

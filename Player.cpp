@@ -8,9 +8,8 @@ Player::Player(const sf::Input& in, Game& gm) : _input(in), _gameManager(gm)
 	_x = posx;
 	_y = posy;
 
-	_img = new sf::Image();
-	_img->LoadFromFile("sprites/player.png");
-	_spr.SetImage(*_img);
+
+	_spr.SetImage(*_gameManager["player"]);
 	_spr.SetPosition(_x,_y);
 	CenterSprite();
 
@@ -25,7 +24,7 @@ void Player::Step()
 	if(_input.IsKeyDown(sf::Key::D))
 		_x += _speedx;
 	if(_input.IsKeyDown(sf::Key::Space)){
-		_gameManager.AddObject(new Bullet(_x,_y));
+		_gameManager.AddObject(new Bullet(_x,_y,_gameManager));
 	}
 
 

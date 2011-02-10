@@ -5,7 +5,17 @@ const unsigned int Game::NUM_PLAYER = 0;
 const unsigned int Game::NUM_BUBBLE = 1;
 const unsigned int Game::NUM_BULLET = 2;
 
-Game::Game(sf::RenderWindow &scr) : ObjectManager(scr){}
+Game::Game(sf::RenderWindow &scr) : ObjectManager(scr){
+	_imgResourcer["bubble"] = new sf::Image();
+	_imgResourcer["player"] = new sf::Image();
+	_imgResourcer["bullet"] = new sf::Image();
+
+	_imgResourcer["bubble"]->LoadFromFile("sprites/bubble.png");
+	_imgResourcer["player"]->LoadFromFile("sprites/player.png");
+	_imgResourcer["bullet"]->LoadFromFile("sprites/bullet.png");
+
+
+}
 
 unsigned int Game::BubbleCount(){
     unsigned int count = 0;
@@ -17,4 +27,10 @@ unsigned int Game::BubbleCount(){
     }
     return count;
 
+}
+
+sf::Image * Game::operator[](const std::string str){
+	if(_imgResourcer.find(str) != _imgResourcer.end())
+		return _imgResourcer[str];
+	return (new sf::Image());
 }
