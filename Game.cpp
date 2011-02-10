@@ -14,7 +14,6 @@ Game::Game(sf::RenderWindow &scr) : ObjectManager(scr){
 	_imgResourcer["player"]->LoadFromFile("sprites/player.png");
 	_imgResourcer["bullet"]->LoadFromFile("sprites/bullet.png");
 
-
 }
 
 unsigned int Game::BubbleCount(){

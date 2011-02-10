@@ -20,6 +20,11 @@ bool GameOn(sf::RenderWindow &screen, unsigned int level){
     Game gameManager(screen);
     Player * player = dynamic_cast<Player*>(gameManager.AddObject(new Player(in,gameManager)));
 
+	sf::Image bg;
+	bg.LoadFromFile("sprites/background.png");
+	sf::Sprite background;
+	background.SetImage(bg);
+	background.SetPosition(0,0);
     sf::Event event;
 
     for (unsigned int i = 0 ; i < level ; i ++)
@@ -30,7 +35,7 @@ bool GameOn(sf::RenderWindow &screen, unsigned int level){
     while(true){
 
         screen.Clear(sf::Color::Black);
-
+		screen.Draw(background);
         while(screen.GetEvent(event)){
             if((event.Type == sf::Event::Closed) or (event.Key.Code == sf::Key::Escape)){
                 screen.Close();
