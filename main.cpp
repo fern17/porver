@@ -24,7 +24,7 @@ bool GameOn(sf::RenderWindow &screen, unsigned int level){
 
     for (int i = 0 ; i < level ; i ++)
     {
-	    gameManager.AddObject(new Bubble(i*200, 128, 5-level, level%3, level%3));
+	    gameManager.AddObject(new Bubble(i*160+160, 160, 5-level, (level%4) + 3, (level%5) + 2));
     }
 
     while(true){
@@ -35,14 +35,14 @@ bool GameOn(sf::RenderWindow &screen, unsigned int level){
             if((event.Type == sf::Event::Closed) or (event.Key.Code == sf::Key::Escape)){
                 screen.Close();
                 return EXIT_SUCCESS;
-			}
+		}
         }
 
         gameManager.Iterate();
 
         unsigned int cantBurbujas = gameManager.BubbleCount();
 
-        if(cantBurbujas == 1) //termina el nivel CAMBIAR ESTOOOOOOOOOOOOOOOOOOOOOOOOOOOO A 0
+        if(cantBurbujas == 0) //termina el nivel CAMBIAR ESTOOOOOOOOOOOOOOOOOOOOOOOOOOOO A 0
             return true;
 
         if(player->GetLifes() == 0) //perdiste
