@@ -23,7 +23,8 @@ void Player::Step()
 		_x -= _speedx;
 	if(_input.IsKeyDown(sf::Key::D))
 		_x += _speedx;
-	if(_input.IsKeyDown(sf::Key::Space)){
+	if(_input.IsKeyDown(sf::Key::Space) && _timer_shoot_delay.GetElapsedTime() > 1){
+		_timer_shoot_delay.Reset();
 		_gameManager.AddObject(new Bullet(_x,_y,_gameManager));
 	}
 
